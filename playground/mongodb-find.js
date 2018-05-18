@@ -1,6 +1,7 @@
 //const MongoClient = require('mongodb').MongoClient;
 const {MongoClient, ObjectID} = require('mongodb');     //Object Destructuring
 
+const port = process.env.PORT || 3000;
 
 MongoClient.connect('mongodb://localhost:27017/TodoApp',(err, db) => {
     if(err) {
@@ -25,7 +26,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',(err, db) => {
     // });
 
     // Task->
-    db.collection('Users').find({name: 'Jen'}).toArray().then((docs) => {
+    db.collection('Users').find({name: 'Jenn'}).toArray().then((docs) => {
         console.log('Users');
         var data = JSON.stringify(docs, undefined, 2);
         console.log(data);
